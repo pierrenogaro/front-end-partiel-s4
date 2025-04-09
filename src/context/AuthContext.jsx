@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
-const API_BASE_URL = 'https://back-end-partiel.pierrenogaro.com/';
+const API_BASE_URL = 'https://back-end-partiel.pierrenogaro.com';
 
 export const useAuth = () => useContext(AuthContext);
 
