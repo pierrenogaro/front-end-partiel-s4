@@ -26,6 +26,11 @@ const Navbar = () => {
                                         <i className="bi bi-camera me-1"></i> Scan QR
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to="/cart" className="nav-link px-3">
+                                        <i className="bi bi-cart me-1"></i> Cart
+                                    </Link>
+                                </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">
                                         <i className="bi bi-person-circle me-1"></i> {user.username}
