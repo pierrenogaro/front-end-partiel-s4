@@ -93,7 +93,7 @@ const QRScanner = ({ onScanSuccess }) => {
 
                             <div className="d-grid gap-2 mt-3">
                                 {!scanning ? (
-                                    <button onClick={startScanning} className="btn btn-primary">
+                                    <button onClick={startScanning} className="btn btn-success">
                                         Start Scanning
                                     </button>
                                 ) : (
