@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ScanPage from './pages/ScanPage';
+import CartPage from './pages/CartPage.jsx';
 import './App.css';
 
 const RequireAuth = ({ children }) => {
@@ -28,12 +30,10 @@ function AppRoutes() {
                             <ScanPage />
                         </RequireAuth>
                     } />
-
-                    <Route path="*" element={
-                        <div className="text-center py-10">
-                            <h1 className="text-4xl font-bold text-red-500">404</h1>
-                            <p className="text-xl mt-2">Page not found</p>
-                        </div>
+                    <Route path="/cart" element={
+                        <RequireAuth>
+                            <CartPage />
+                        </RequireAuth>
                     } />
                 </Routes>
             </div>
@@ -44,7 +44,9 @@ function AppRoutes() {
 function App() {
     return (
         <AuthProvider>
-            <AppRoutes />
+            <CartProvider>
+                <AppRoutes />
+            </CartProvider>
         </AuthProvider>
     );
 }
